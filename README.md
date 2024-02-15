@@ -1,5 +1,11 @@
 # go-todo
 
+## Validate
+
+```
+$ go vet ./...
+```
+
 ## Env
 
 ```
