@@ -60,7 +60,7 @@ func (th *todoHandler) Create(c echo.Context) error {
 }
 
 func (th *todoHandler) Update(c echo.Context) error {
-	ID := c.Param("todoId")
+	ID := c.Param("todoID")
 	todoID, _ := strconv.Atoi(ID)
 
 	// Bind用todoを生成
@@ -76,7 +76,7 @@ func (th *todoHandler) Update(c echo.Context) error {
 }
 
 func (th *todoHandler) Delete(c echo.Context) error {
-	ID := c.Param("todoId")
+	ID := c.Param("todoID")
 	todoID, _ := strconv.Atoi(ID)
 
 	if err := th.todoUC.DeleteTodo(uint(todoID)); err != nil {

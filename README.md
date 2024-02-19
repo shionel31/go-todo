@@ -21,7 +21,28 @@ $ go mod tidy -v
 ## Migrate
 
 ```
-$ go run cmd/migrate.go
+<!-- $ go run cmd/migrate/migrate.go -->
+$ make migrate
+```
+
+
+## Run Echo Server (Not docker yet)
+
+```
+<!-- $ go run ./cmd/main.go       
+postgres://todo-user:todo-password@localhost:5432/todos
+データベースとの接続に成功しました
+
+   ____    __
+  / __/___/ /  ___
+ / _// __/ _ \/ _ \
+/___/\__/_//_/\___/ v4.11.4
+High performance, minimalist Go web framework
+https://echo.labstack.com
+____________________________________O/_______
+                                    O\
+⇨ http server started on [::]:8080 -->
+$ make docker-up-todo
 ```
 
 ## Run PostgreSQL
@@ -46,24 +67,6 @@ todos=# select * from todos;
  id |  title  | status |          created_at           |          updated_at           
 ----+---------+--------+-------------------------------+-------------------------------
   1 | テスト1 | 処理中 | 2024-02-12 16:13:17.196959+00 | 2024-02-12 16:13:17.196959+00
-```
-
-## Run Echo Server (Not docker yet)
-
-```
-$ go run ./cmd/main.go       
-postgres://todo-user:todo-password@localhost:5432/todos
-データベースとの接続に成功しました
-
-   ____    __
-  / __/___/ /  ___
- / _// __/ _ \/ _ \
-/___/\__/_//_/\___/ v4.11.4
-High performance, minimalist Go web framework
-https://echo.labstack.com
-____________________________________O/_______
-                                    O\
-⇨ http server started on [::]:8080
 ```
 
 ## Call API
